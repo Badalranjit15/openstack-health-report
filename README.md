@@ -5,11 +5,7 @@ This script is a mix of shell and adhoc ansible commands to check the health of 
 
 - neutron/nova agent state
 
-- rabbitmq cluster health
-
 - percona cluster health
-
-- services behind haproxy
 
 - pacemaker resources
 
@@ -17,10 +13,14 @@ This script is a mix of shell and adhoc ansible commands to check the health of 
 
 - controller / hypervisor NIC/bonding state
 
-- Systemd status of Openstack services
+- Openstack services Status
+
+- Openstack Endpoint List
+
+- Cinder backend in Use is available/up and whether it is able to serve requests
 
 
-If the  environment does not have a certain component corresponding commands can be easily removed. Servers are assumed to have 4 NICs with 2 bond interfaces.
+If the  environment does not have a certain component corresponding commands can be easily removed. Servers are assumed to have 2 bond interfaces.
 
 To use this script follow the steps below.
 
@@ -30,12 +30,12 @@ Ansible (>1.9.4) and python openstack clients should be installed on the environ
 In the inventory file controller1 is the first controller of the openstack controller cluster. Certain commands are only run from the first controller.
 
 ## Step2)
-Enter the path to any additional ssh parameters as below.This is not necessary if you do not need additional ssh parameters such as in case of ssh tunneling and crypto parameters.
+Enter the path to any additional ssh parameters as below.This is not necessary if you do not need additional ssh parameters such as in case of ssh tunneling and crypto parameters.(Not Required for RHOSP)
 
 export ANSIBLE_SSH_ARGS="-F /root/.ssh/openstack_cloud1_config"
 
 ## Step 3)
 Enter the path to the openstack rc file as below.
-source /home_dir/openstack_cloud1/envrc
+source /home/stack/overcloudrc
 
 
