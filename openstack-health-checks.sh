@@ -4,7 +4,7 @@
 
 
 #Enter the path to the openstack rc file below
-source /home/stackrc/overcloudrc
+source /home/stack/overcloudrc
 
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+++++++++++++++++++++++++++++++++++++++++ Checking Services in cloud +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
